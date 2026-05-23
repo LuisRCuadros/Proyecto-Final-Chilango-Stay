@@ -169,7 +169,7 @@ Orquesta el flujo completo de razonamiento: extracción → validación de restr
 
 ---
 
-## Descripción del producto
+## Definición del producto
 
 [Definición del producto](docs/Definicion.pdf)
 
