@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" width="560" height="160">
+  <!-- Logo corporativo: Chilango Stay — versión rojo + rosa -->
+
+  <defs>
+    <!-- Degradado rojo -> rosa para el pin -->
+    <linearGradient id="rojoRosa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#E03131"/>
+      <stop offset="100%" stop-color="#E84B8A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============ SÍMBOLO ============ -->
+  <g transform="translate(20,20)">
+    <!-- Pin de ubicación con degradado -->
+    <path d="M 60 8
+             C 31 8 8 31 8 60
+             C 8 96 60 120 60 120
+             C 60 120 112 96 112 60
+             C 112 31 89 8 60 8 Z"
+          fill="url(#rojoRosa)"/>
+    <!-- Casa recortada en blanco -->
+    <path d="M 60 38 L 86 60 L 86 86 L 34 86 L 34 60 Z"
+          fill="#FFFFFF"/>
+    <!-- Puerta en negativo -->
+    <rect x="53" y="68" width="14" height="18" fill="#E84B8A"/>
+  </g>
+
+  <!-- ============ WORDMARK ============ -->
+  <g transform="translate(165,0)">
+    <!-- "Chilango" en rojo, "Stay" en rosa -->
+    <text y="82"
+          font-family="'Helvetica Neue', Arial, sans-serif"
+          font-size="50" letter-spacing="-1">
+      <tspan fill="#E03131" font-weight="700">Chilango</tspan><tspan
+             fill="#E84B8A" font-weight="700"> Stay</tspan>
+    </text>
+    <!-- Tagline -->
+    <text x="2" y="112"
+          font-family="'Helvetica Neue', Arial, sans-serif"
+          font-size="17" font-weight="400"
+          fill="#9A7A85" letter-spacing="3">ESTIMADOR DE PRECIOS · CDMX</text>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+boto3
+botocore
+plotly
+sagemaker
+scikit-learn
+xgboost
+strands-agents
+pyarrow
