@@ -5,7 +5,7 @@
 | **Equipo** | Diana Arroyo / Luis Cuadros |
 | **URL App** | http://chilango-alb-pv6osdyrpasg-281902611.us-east-1.elb.amazonaws.com/ |
 
-> Estimación inteligente de precios de alojamiento en Ciudad de México mediante machine learning, LLMs y agentes de IA — desplegado como aplicación en AWS.
+> Estimación inteligente de precios de alojamiento en Ciudad de México mediante machine learning, LLMs y agentes de IA, desplegado como aplicación en AWS.
 
 ---
 
@@ -18,7 +18,7 @@
 - [Datos](#datos)
 - [Inteligencia aplicada](#inteligencia-aplicada)
 - [Estructura del repositorio](#estructura-del-repositorio)
-- [Descripción del producto](#descripción-del-producto)
+- [Definición del producto](#descripción-del-producto)
 - [FAQ](#FAQ)
 
 
@@ -171,7 +171,7 @@ Orquesta el flujo completo de razonamiento: extracción → validación de restr
 
 ## Descripción del producto
 
-[Descripción del producto](docs/descripcion.pdf)
+[Definición del producto](docs/Definicion.pdf)
 
 ---
 
