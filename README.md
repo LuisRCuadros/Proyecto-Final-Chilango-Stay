@@ -1,11 +1,11 @@
 # Chilango Stay
 
-| Atributo | Detalle |
+| Elemento | Detalle |
 |----------|---------|
 | **Equipo** | Diana Arroyo / Luis Cuadros |
 | **URL App** | http://chilango-alb-pv6osdyrpasg-281902611.us-east-1.elb.amazonaws.com/ |
 
-> Estimación inteligente de precios de alojamiento en Ciudad de México mediante machine learning, LLMs y agentes de IA — desplegado como aplicación web en AWS.
+> Estimación inteligente de precios de alojamiento en Ciudad de México mediante machine learning, LLMs y agentes de IA — desplegado como aplicación en AWS.
 
 ---
 
@@ -41,12 +41,12 @@ El usuario final es el **anfitrión (host) de Airbnb en CDMX**: propietarios o a
 ## Experiencia de usuario
 
 ```
-1. Abre la app de Streamlit desde cualquier navegador
-2. Escribe la descripción de tu propiedad en lenguaje natural, o bien, selecciona manualmente las características,
-3. El sistema extrae atributos, valida ubicación y llama al modelo
-4. Ves el precio estimado + tabla de atributos detectados en < 10 seg
+1. Abre la app de Streamlit desde cualquier navegador.
+2. Escribe la descripción de tu propiedad en lenguaje natural, o bien, selecciona manualmente las características.
+3. El sistema extrae atributos, valida ubicación y llama al modelo.
+4. Ves el precio estimado + tabla de atributos detectados en < 10 seg.
 5. Puedes realizar un análisis de sensibilidad para extraer información más relevante de tu propiedad.
-5. Ajusta la descripción y vuelve a consultar cuantas veces quieras
+5. Ajusta la descripción y vuelve a consultar cuantas veces quieras.
 ```
 
 **Ejemplo de input:**
@@ -107,7 +107,7 @@ El usuario final es el **anfitrión (host) de Airbnb en CDMX**: propietarios o a
 - **Target encoding con smoothing bayesiano** para `neighbourhood_cleansed`: alcaldías con pocas muestras reciben un encoding mezclado con la mediana global (`smoothing=10`), evitando overfitting
 - **Oversampling** de alcaldías minoritarias (< 212 muestras): Xochimilco, La Magdalena Contreras, Tláhuac y Milpa Alta — aplicado solo al split de train para evitar data leakage
 - **Geo-clusters**: cuadrícula 5×5 sobre CDMX con quantile cut de lat/lon — captura variación de precio dentro de la misma alcaldía
-- **Features derivadas**: `guests_per_room`, `beds_per_guest`, `amenity_score`, `capacity_bath`, `dist_centro` (distancia al Zócalo), `is_large`, `is_private_room`
+- **Features derivadas**: `guests_per_room`, `beds_per_guest`, `amenity_score`, `capacity_bath`, `dist_centro` (distancia al Ángel de la Independencia), `is_large`, `is_private_room`
 
 ### 3. LLM — Extracción de entidades (Bedrock / Claude)
 Una sola llamada a Bedrock extrae en JSON todos los atributos del alojamiento desde el texto libre del usuario, incluyendo `is_valid_listing` para detectar solicitudes sin relación con alojamientos.
@@ -124,30 +124,6 @@ Orquesta el flujo completo de razonamiento: extracción → validación de restr
 3. `beds = bedrooms` si no se especifican camas
 4. Geocodificación automática para direcciones y colonias
 5. Solicitudes sin relación con alojamientos → mensaje de error
-
----
-
-## Inputs y outputs
-
-### Inputs
-El único input requerido es **texto libre**. El sistema infiere todo lo demás:
-
-| Campo | Requerido | Default si no se menciona |
-|---|---|---|
-| Descripción del alojamiento | ✅ Sí | — |
-| Ubicación (alcaldía/colonia/dirección) | No | Cuauhtémoc |
-| Tipo de espacio | No | Entire home/apt |
-| Número de ocupantes | No | 2 |
-| Número de habitaciones | No | 2 |
-| Número de camas | No | igual a habitaciones |
-| Número de baños | No | 1 |
-| Estacionamiento | No | Sin estacionamiento |
-| Patio / balcón | No | Sin patio/balcón |
-
-### Outputs
-- **Precio estimado** en MXN por noche
-- **Tabla de atributos detectados** para verificación
-- **Mensajes de error** descriptivos ante ubicaciones inválidas o solicitudes fuera de alcance
 
 ---
 
@@ -191,17 +167,16 @@ El único input requerido es **texto libre**. El sistema infiere todo lo demás:
 └── README.md
 ```
 
-
 ---
 
 ## Descripción del producto
 
-[Descripción del producto(docs/descripcion.pdf)
+[Descripción del producto](docs/descripcion.pdf)
 
 ---
 
 ## FAQ
 
-[Descripción del producto(docs/FAQ.pdf)
+[FAQ](docs/FAQ.pdf)
 
 ---
